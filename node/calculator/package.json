@@ -1,0 +1,28 @@
+{
+  "name": "calculatormoduleapp",
+  "version": "1.0.0",
+  "description": "Typical Node.js Console Application, run application from terminal, test from terminal",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node_modules/.bin/mocha ./test//*.js",
+    "lint": "node_modules/.bin/eslint './**/*.js' --ignore-path .eslintignore"
+  },
+  "keywords": [
+    "node.js",
+    "mocha",
+    "chai",
+    "readline-sync"
+  ],
+  "author": "StackRoute",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jasmine": "^2.9.3",
+    "mocha": "^5.0.5"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
+}
