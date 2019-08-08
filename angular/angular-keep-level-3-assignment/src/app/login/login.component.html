@@ -1,0 +1,19 @@
+<div class="login">
+  <form (submit)='loginSubmit()' #myform="ngForm" >
+    <div class="divcls">
+      <label for="username">UserName</label>
+      <input class="username" placeholder="Enter Username" matInput [formControl]='username'>
+      <small *ngIf="(username.touched || username.dirty) && username.invalid">This is required field</small>
+    </div>
+    <div class="divcls">
+      <label for="password">Password</label>
+      <input class="password" placeholder="Enter PassWord" matInput type = 'password' [formControl]='password'>
+      <small *ngIf="(password.touched || password.dirty) && password.invalid && password.errors.required">This is required field</small>  
+      <small *ngIf="(password.touched || password.dirty) && password.invalid && password.errors.minlength"> {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}} Char to Go..</small>
+      </div>
+      <div class="divcls">
+        <button type="submit" [disabled]='myform.invalid'>Submit</button>
+        <strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+      </div>
+  </form>
+</div>
