@@ -1,0 +1,3 @@
+const flatten = (array) => {
+	return Array.isArray(array) ? [].concat.apply([], array.map(flatten)) : array;
+};
